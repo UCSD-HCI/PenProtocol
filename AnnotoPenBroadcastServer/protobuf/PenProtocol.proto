@@ -1,0 +1,45 @@
+package InteractiveSpace;
+
+option java_package = "edu.ucsd.hci.interactivespace.annotopen.protobuf";
+option java_outer_classname = "AnnotoPenProtocol";
+
+enum MessageType {
+	CustomString = 0;
+	CustomBytes = 1;
+	Status = 2;
+	Motion = 3;
+};
+
+enum StatusCode {
+	Connected = 0;
+	Starting = 1;
+	Ready = 2;
+	Error = 3;
+}
+
+enum MotionCode {
+	PenDown = 0;
+	PenUp = 1;
+	PenMove = 2;
+}
+
+message StatusMessage {
+	required StatusCode status = 1;
+	optional string message = 2;
+}
+
+message MotionMessage {
+	required MotionCode motion = 1;
+	optional float x = 2;
+	optional float y = 3;
+}
+
+message Message {
+	required MessageType type = 1;
+	optional uint32 time = 2;
+	optional string customString = 3;
+	optional string customBytes = 4;
+	optional StatusMessage status = 5;
+	optional MotionMessage motion = 6;
+};
+
