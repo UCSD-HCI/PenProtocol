@@ -1163,9 +1163,9 @@ public final class AnnotoPenProtocol {
     boolean hasCustomString();
     String getCustomString();
     
-    // optional string customBytes = 4;
+    // optional bytes customBytes = 4;
     boolean hasCustomBytes();
-    String getCustomBytes();
+    com.google.protobuf.ByteString getCustomBytes();
     
     // optional .InteractiveSpace.StatusMessage status = 5;
     boolean hasStatus();
@@ -1258,36 +1258,14 @@ public final class AnnotoPenProtocol {
       }
     }
     
-    // optional string customBytes = 4;
+    // optional bytes customBytes = 4;
     public static final int CUSTOMBYTES_FIELD_NUMBER = 4;
-    private java.lang.Object customBytes_;
+    private com.google.protobuf.ByteString customBytes_;
     public boolean hasCustomBytes() {
       return ((bitField0_ & 0x00000008) == 0x00000008);
     }
-    public String getCustomBytes() {
-      java.lang.Object ref = customBytes_;
-      if (ref instanceof String) {
-        return (String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
-        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
-          customBytes_ = s;
-        }
-        return s;
-      }
-    }
-    private com.google.protobuf.ByteString getCustomBytesBytes() {
-      java.lang.Object ref = customBytes_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
-        customBytes_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
+    public com.google.protobuf.ByteString getCustomBytes() {
+      return customBytes_;
     }
     
     // optional .InteractiveSpace.StatusMessage status = 5;
@@ -1320,7 +1298,7 @@ public final class AnnotoPenProtocol {
       type_ = edu.ucsd.hci.interactivespace.annotopen.protobuf.AnnotoPenProtocol.MessageType.CustomString;
       time_ = 0;
       customString_ = "";
-      customBytes_ = "";
+      customBytes_ = com.google.protobuf.ByteString.EMPTY;
       status_ = edu.ucsd.hci.interactivespace.annotopen.protobuf.AnnotoPenProtocol.StatusMessage.getDefaultInstance();
       motion_ = edu.ucsd.hci.interactivespace.annotopen.protobuf.AnnotoPenProtocol.MotionMessage.getDefaultInstance();
     }
@@ -1362,7 +1340,7 @@ public final class AnnotoPenProtocol {
         output.writeBytes(3, getCustomStringBytes());
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
-        output.writeBytes(4, getCustomBytesBytes());
+        output.writeBytes(4, customBytes_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         output.writeMessage(5, status_);
@@ -1393,7 +1371,7 @@ public final class AnnotoPenProtocol {
       }
       if (((bitField0_ & 0x00000008) == 0x00000008)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(4, getCustomBytesBytes());
+          .computeBytesSize(4, customBytes_);
       }
       if (((bitField0_ & 0x00000010) == 0x00000010)) {
         size += com.google.protobuf.CodedOutputStream
@@ -1535,7 +1513,7 @@ public final class AnnotoPenProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         customString_ = "";
         bitField0_ = (bitField0_ & ~0x00000004);
-        customBytes_ = "";
+        customBytes_ = com.google.protobuf.ByteString.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000008);
         if (statusBuilder_ == null) {
           status_ = edu.ucsd.hci.interactivespace.annotopen.protobuf.AnnotoPenProtocol.StatusMessage.getDefaultInstance();
@@ -1831,22 +1809,15 @@ public final class AnnotoPenProtocol {
         onChanged();
       }
       
-      // optional string customBytes = 4;
-      private java.lang.Object customBytes_ = "";
+      // optional bytes customBytes = 4;
+      private com.google.protobuf.ByteString customBytes_ = com.google.protobuf.ByteString.EMPTY;
       public boolean hasCustomBytes() {
         return ((bitField0_ & 0x00000008) == 0x00000008);
       }
-      public String getCustomBytes() {
-        java.lang.Object ref = customBytes_;
-        if (!(ref instanceof String)) {
-          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
-          customBytes_ = s;
-          return s;
-        } else {
-          return (String) ref;
-        }
+      public com.google.protobuf.ByteString getCustomBytes() {
+        return customBytes_;
       }
-      public Builder setCustomBytes(String value) {
+      public Builder setCustomBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1860,11 +1831,6 @@ public final class AnnotoPenProtocol {
         customBytes_ = getDefaultInstance().getCustomBytes();
         onChanged();
         return this;
-      }
-      void setCustomBytes(com.google.protobuf.ByteString value) {
-        bitField0_ |= 0x00000008;
-        customBytes_ = value;
-        onChanged();
       }
       
       // optional .InteractiveSpace.StatusMessage status = 5;
@@ -2089,7 +2055,7 @@ public final class AnnotoPenProtocol {
       "tiveSpace.MotionCode\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001" +
       "(\002\"\321\001\n\007Message\022+\n\004type\030\001 \002(\0162\035.Interacti" +
       "veSpace.MessageType\022\014\n\004time\030\002 \001(\r\022\024\n\014cus" +
-      "tomString\030\003 \001(\t\022\023\n\013customBytes\030\004 \001(\t\022/\n\006" +
+      "tomString\030\003 \001(\t\022\023\n\013customBytes\030\004 \001(\014\022/\n\006" +
       "status\030\005 \001(\0132\037.InteractiveSpace.StatusMe" +
       "ssage\022/\n\006motion\030\006 \001(\0132\037.InteractiveSpace",
       ".MotionMessage*H\n\013MessageType\022\020\n\014CustomS" +

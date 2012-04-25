@@ -38,7 +38,7 @@ message Message {
 	required MessageType type = 1;
 	optional uint32 time = 2;
 	optional string customString = 3;
-	optional string customBytes = 4;
+	optional bytes customBytes = 4;
 	optional StatusMessage status = 5;
 	optional MotionMessage motion = 6;
 };

@@ -1,55 +1,29 @@
 package edu.ucsd.hci.interactivespace.annotopen;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.FileInputStream;
 
-import com.google.protobuf.CodedInputStream;
+import edu.ucsd.hci.interactivespace.annotopen.protobuf.AnnotoPenProtocol.MotionCode;
+import edu.ucsd.hci.interactivespace.annotopen.protobuf.AnnotoPenProtocol.StatusCode;
 
 public class Main {
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Test.Builder tb = Test.newBuilder();
-		tb.setId(1)
-		.setName("Hello World!");
-		
-		Test t = tb.build();
-		System.out.println(t.toString());
-		
 		try {
-			FileOutputStream fos = new FileOutputStream("test.bin");
-			FileInputStream fis = new FileInputStream("test.bin");
+			BroadcastServer server = new BroadcastServer("localhost", 65432);	//will run a new thread
 			
-			t.writeTo(fos);
-			t.writeTo(fos);
+			server.issueCustomString("Hello World!");
+			server.issueStatus(StatusCode.Connected, "Pen Connected");
+			server.issueMotion(MotionCode.PenMove, 32.4f, 63.5f);
 			
+			System.out.println("All commands issued.");
 			
-			CodedInputStream cis = CodedInputStream.newInstance(fis);
-			int limit = cis.pushLimit(t.getSerializedSize());
-
-			Test t2 = Test.parseFrom(cis);
-			System.out.println(t2.getId());
-			System.out.println(t2.getName());
-			
-			cis.popLimit(limit);
-			limit = cis.pushLimit(t.getSerializedSize());
-		
-			t2 = Test.parseFrom(cis);
-			System.out.println(t2.getId());
-			System.out.println(t2.getName());
-			
-			cis.popLimit(limit);
-			
-			fos.close();
-			fis.close();
-			
-			t.writeTo(System.out);
-			
+			server.join();	//wait until server thread quits
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 }
