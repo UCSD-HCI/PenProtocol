@@ -11,11 +11,11 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		try {
-			BroadcastServer server = new BroadcastServer("localhost", 65432);	//will run a new thread
+			BroadcastServer server = new BroadcastServer("192.168.1.14", 65432);	//will run a new thread
 			
 			server.issueCustomString("Hello World!");
 			server.issueStatus(StatusCode.Connected, "Pen Connected");
-			server.issueMotion(MotionCode.PenMove, 32.4f, 63.5f);
+			server.issueMotion(MotionCode.PenMove, 32.4f, 63.5f, 1335505852, 255, "DocumentName", 1);
 			
 			System.out.println("All commands issued.");
 			

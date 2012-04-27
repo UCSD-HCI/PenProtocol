@@ -693,6 +693,22 @@ public final class AnnotoPenProtocol {
     // optional float y = 3;
     boolean hasY();
     float getY();
+    
+    // optional uint32 timestamp = 4;
+    boolean hasTimestamp();
+    int getTimestamp();
+    
+    // optional uint32 force = 5;
+    boolean hasForce();
+    int getForce();
+    
+    // optional string document = 6;
+    boolean hasDocument();
+    String getDocument();
+    
+    // optional uint32 page = 7;
+    boolean hasPage();
+    int getPage();
   }
   public static final class MotionMessage extends
       com.google.protobuf.GeneratedMessage
@@ -753,10 +769,76 @@ public final class AnnotoPenProtocol {
       return y_;
     }
     
+    // optional uint32 timestamp = 4;
+    public static final int TIMESTAMP_FIELD_NUMBER = 4;
+    private int timestamp_;
+    public boolean hasTimestamp() {
+      return ((bitField0_ & 0x00000008) == 0x00000008);
+    }
+    public int getTimestamp() {
+      return timestamp_;
+    }
+    
+    // optional uint32 force = 5;
+    public static final int FORCE_FIELD_NUMBER = 5;
+    private int force_;
+    public boolean hasForce() {
+      return ((bitField0_ & 0x00000010) == 0x00000010);
+    }
+    public int getForce() {
+      return force_;
+    }
+    
+    // optional string document = 6;
+    public static final int DOCUMENT_FIELD_NUMBER = 6;
+    private java.lang.Object document_;
+    public boolean hasDocument() {
+      return ((bitField0_ & 0x00000020) == 0x00000020);
+    }
+    public String getDocument() {
+      java.lang.Object ref = document_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        if (com.google.protobuf.Internal.isValidUtf8(bs)) {
+          document_ = s;
+        }
+        return s;
+      }
+    }
+    private com.google.protobuf.ByteString getDocumentBytes() {
+      java.lang.Object ref = document_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8((String) ref);
+        document_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    
+    // optional uint32 page = 7;
+    public static final int PAGE_FIELD_NUMBER = 7;
+    private int page_;
+    public boolean hasPage() {
+      return ((bitField0_ & 0x00000040) == 0x00000040);
+    }
+    public int getPage() {
+      return page_;
+    }
+    
     private void initFields() {
       motion_ = edu.ucsd.hci.interactivespace.annotopen.protobuf.AnnotoPenProtocol.MotionCode.PenDown;
       x_ = 0F;
       y_ = 0F;
+      timestamp_ = 0;
+      force_ = 0;
+      document_ = "";
+      page_ = 0;
     }
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
@@ -783,6 +865,18 @@ public final class AnnotoPenProtocol {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         output.writeFloat(3, y_);
       }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        output.writeUInt32(4, timestamp_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        output.writeUInt32(5, force_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        output.writeBytes(6, getDocumentBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        output.writeUInt32(7, page_);
+      }
       getUnknownFields().writeTo(output);
     }
     
@@ -803,6 +897,22 @@ public final class AnnotoPenProtocol {
       if (((bitField0_ & 0x00000004) == 0x00000004)) {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(3, y_);
+      }
+      if (((bitField0_ & 0x00000008) == 0x00000008)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(4, timestamp_);
+      }
+      if (((bitField0_ & 0x00000010) == 0x00000010)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(5, force_);
+      }
+      if (((bitField0_ & 0x00000020) == 0x00000020)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getDocumentBytes());
+      }
+      if (((bitField0_ & 0x00000040) == 0x00000040)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt32Size(7, page_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSerializedSize = size;
@@ -934,6 +1044,14 @@ public final class AnnotoPenProtocol {
         bitField0_ = (bitField0_ & ~0x00000002);
         y_ = 0F;
         bitField0_ = (bitField0_ & ~0x00000004);
+        timestamp_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000008);
+        force_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000010);
+        document_ = "";
+        bitField0_ = (bitField0_ & ~0x00000020);
+        page_ = 0;
+        bitField0_ = (bitField0_ & ~0x00000040);
         return this;
       }
       
@@ -984,6 +1102,22 @@ public final class AnnotoPenProtocol {
           to_bitField0_ |= 0x00000004;
         }
         result.y_ = y_;
+        if (((from_bitField0_ & 0x00000008) == 0x00000008)) {
+          to_bitField0_ |= 0x00000008;
+        }
+        result.timestamp_ = timestamp_;
+        if (((from_bitField0_ & 0x00000010) == 0x00000010)) {
+          to_bitField0_ |= 0x00000010;
+        }
+        result.force_ = force_;
+        if (((from_bitField0_ & 0x00000020) == 0x00000020)) {
+          to_bitField0_ |= 0x00000020;
+        }
+        result.document_ = document_;
+        if (((from_bitField0_ & 0x00000040) == 0x00000040)) {
+          to_bitField0_ |= 0x00000040;
+        }
+        result.page_ = page_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -1008,6 +1142,18 @@ public final class AnnotoPenProtocol {
         }
         if (other.hasY()) {
           setY(other.getY());
+        }
+        if (other.hasTimestamp()) {
+          setTimestamp(other.getTimestamp());
+        }
+        if (other.hasForce()) {
+          setForce(other.getForce());
+        }
+        if (other.hasDocument()) {
+          setDocument(other.getDocument());
+        }
+        if (other.hasPage()) {
+          setPage(other.getPage());
         }
         this.mergeUnknownFields(other.getUnknownFields());
         return this;
@@ -1063,6 +1209,26 @@ public final class AnnotoPenProtocol {
             case 29: {
               bitField0_ |= 0x00000004;
               y_ = input.readFloat();
+              break;
+            }
+            case 32: {
+              bitField0_ |= 0x00000008;
+              timestamp_ = input.readUInt32();
+              break;
+            }
+            case 40: {
+              bitField0_ |= 0x00000010;
+              force_ = input.readUInt32();
+              break;
+            }
+            case 50: {
+              bitField0_ |= 0x00000020;
+              document_ = input.readBytes();
+              break;
+            }
+            case 56: {
+              bitField0_ |= 0x00000040;
+              page_ = input.readUInt32();
               break;
             }
           }
@@ -1133,6 +1299,105 @@ public final class AnnotoPenProtocol {
       public Builder clearY() {
         bitField0_ = (bitField0_ & ~0x00000004);
         y_ = 0F;
+        onChanged();
+        return this;
+      }
+      
+      // optional uint32 timestamp = 4;
+      private int timestamp_ ;
+      public boolean hasTimestamp() {
+        return ((bitField0_ & 0x00000008) == 0x00000008);
+      }
+      public int getTimestamp() {
+        return timestamp_;
+      }
+      public Builder setTimestamp(int value) {
+        bitField0_ |= 0x00000008;
+        timestamp_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearTimestamp() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        timestamp_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional uint32 force = 5;
+      private int force_ ;
+      public boolean hasForce() {
+        return ((bitField0_ & 0x00000010) == 0x00000010);
+      }
+      public int getForce() {
+        return force_;
+      }
+      public Builder setForce(int value) {
+        bitField0_ |= 0x00000010;
+        force_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearForce() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        force_ = 0;
+        onChanged();
+        return this;
+      }
+      
+      // optional string document = 6;
+      private java.lang.Object document_ = "";
+      public boolean hasDocument() {
+        return ((bitField0_ & 0x00000020) == 0x00000020);
+      }
+      public String getDocument() {
+        java.lang.Object ref = document_;
+        if (!(ref instanceof String)) {
+          String s = ((com.google.protobuf.ByteString) ref).toStringUtf8();
+          document_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      public Builder setDocument(String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  bitField0_ |= 0x00000020;
+        document_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearDocument() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        document_ = getDefaultInstance().getDocument();
+        onChanged();
+        return this;
+      }
+      void setDocument(com.google.protobuf.ByteString value) {
+        bitField0_ |= 0x00000020;
+        document_ = value;
+        onChanged();
+      }
+      
+      // optional uint32 page = 7;
+      private int page_ ;
+      public boolean hasPage() {
+        return ((bitField0_ & 0x00000040) == 0x00000040);
+      }
+      public int getPage() {
+        return page_;
+      }
+      public Builder setPage(int value) {
+        bitField0_ |= 0x00000040;
+        page_ = value;
+        onChanged();
+        return this;
+      }
+      public Builder clearPage() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        page_ = 0;
         onChanged();
         return this;
       }
@@ -2050,21 +2315,23 @@ public final class AnnotoPenProtocol {
     java.lang.String[] descriptorData = {
       "\n\021PenProtocol.proto\022\020InteractiveSpace\"N\n" +
       "\rStatusMessage\022,\n\006status\030\001 \002(\0162\034.Interac" +
-      "tiveSpace.StatusCode\022\017\n\007message\030\002 \001(\t\"S\n" +
-      "\rMotionMessage\022,\n\006motion\030\001 \002(\0162\034.Interac" +
-      "tiveSpace.MotionCode\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 \001" +
-      "(\002\"\321\001\n\007Message\022+\n\004type\030\001 \002(\0162\035.Interacti" +
-      "veSpace.MessageType\022\014\n\004time\030\002 \001(\r\022\024\n\014cus" +
-      "tomString\030\003 \001(\t\022\023\n\013customBytes\030\004 \001(\014\022/\n\006" +
-      "status\030\005 \001(\0132\037.InteractiveSpace.StatusMe" +
-      "ssage\022/\n\006motion\030\006 \001(\0132\037.InteractiveSpace",
-      ".MotionMessage*H\n\013MessageType\022\020\n\014CustomS" +
-      "tring\020\000\022\017\n\013CustomBytes\020\001\022\n\n\006Status\020\002\022\n\n\006" +
-      "Motion\020\003*?\n\nStatusCode\022\r\n\tConnected\020\000\022\014\n" +
-      "\010Starting\020\001\022\t\n\005Ready\020\002\022\t\n\005Error\020\003*1\n\nMot" +
-      "ionCode\022\013\n\007PenDown\020\000\022\t\n\005PenUp\020\001\022\013\n\007PenMo" +
-      "ve\020\002BE\n0edu.ucsd.hci.interactivespace.an" +
-      "notopen.protobufB\021AnnotoPenProtocol"
+      "tiveSpace.StatusCode\022\017\n\007message\030\002 \001(\t\"\225\001" +
+      "\n\rMotionMessage\022,\n\006motion\030\001 \002(\0162\034.Intera" +
+      "ctiveSpace.MotionCode\022\t\n\001x\030\002 \001(\002\022\t\n\001y\030\003 " +
+      "\001(\002\022\021\n\ttimestamp\030\004 \001(\r\022\r\n\005force\030\005 \001(\r\022\020\n" +
+      "\010document\030\006 \001(\t\022\014\n\004page\030\007 \001(\r\"\321\001\n\007Messag" +
+      "e\022+\n\004type\030\001 \002(\0162\035.InteractiveSpace.Messa" +
+      "geType\022\014\n\004time\030\002 \001(\r\022\024\n\014customString\030\003 \001" +
+      "(\t\022\023\n\013customBytes\030\004 \001(\014\022/\n\006status\030\005 \001(\0132",
+      "\037.InteractiveSpace.StatusMessage\022/\n\006moti" +
+      "on\030\006 \001(\0132\037.InteractiveSpace.MotionMessag" +
+      "e*H\n\013MessageType\022\020\n\014CustomString\020\000\022\017\n\013Cu" +
+      "stomBytes\020\001\022\n\n\006Status\020\002\022\n\n\006Motion\020\003*?\n\nS" +
+      "tatusCode\022\r\n\tConnected\020\000\022\014\n\010Starting\020\001\022\t" +
+      "\n\005Ready\020\002\022\t\n\005Error\020\003*1\n\nMotionCode\022\013\n\007Pe" +
+      "nDown\020\000\022\t\n\005PenUp\020\001\022\013\n\007PenMove\020\002BE\n0edu.u" +
+      "csd.hci.interactivespace.annotopen.proto" +
+      "bufB\021AnnotoPenProtocol"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
       new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -2084,7 +2351,7 @@ public final class AnnotoPenProtocol {
           internal_static_InteractiveSpace_MotionMessage_fieldAccessorTable = new
             com.google.protobuf.GeneratedMessage.FieldAccessorTable(
               internal_static_InteractiveSpace_MotionMessage_descriptor,
-              new java.lang.String[] { "Motion", "X", "Y", },
+              new java.lang.String[] { "Motion", "X", "Y", "Timestamp", "Force", "Document", "Page", },
               edu.ucsd.hci.interactivespace.annotopen.protobuf.AnnotoPenProtocol.MotionMessage.class,
               edu.ucsd.hci.interactivespace.annotopen.protobuf.AnnotoPenProtocol.MotionMessage.Builder.class);
           internal_static_InteractiveSpace_Message_descriptor =

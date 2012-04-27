@@ -74,11 +74,15 @@ public class BroadcastServer {
 		messageQueue.add(b.build());
 	}
 	
-	public void issueMotion(MotionCode motion, float x, float y) {
+	public void issueMotion(MotionCode motion, float x, float y, int timestamp, int force, String document, int page) {
 		MotionMessage.Builder motionB = MotionMessage.newBuilder();
 		motionB.setMotion(motion)
 		       .setX(x)
-		       .setY(y);
+		       .setY(y)
+		       .setTimestamp(timestamp)
+		       .setForce(force)
+		       .setDocument(document)
+		       .setPage(page);
 		
 		Message.Builder b = Message.newBuilder();
 		b.setType(MessageType.Motion)
