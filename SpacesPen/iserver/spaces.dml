@@ -1,0 +1,133 @@
+insert into association AccessibleTo: [];
+create o1279;
+dress o1279 as entity values (
+	name = 'Page AC';
+	properties = [('org.ximtec.iserver.ac:buttonNr', '1')];
+);
+dress o1279 as resource values (
+);
+dress o1279 as activeComponent values (
+	identifier = 'edu.ucsd.hci.spaces.BUTTON';
+);
+insert into collection ActiveComponents: [o1279];
+create o1190;
+dress o1190 as layer values (
+	name = 'Default Layer';
+);
+insert into collection ActiveLayers: [o1190];
+insert into collection Circles: [];
+insert into collection ComplexShapes: [];
+create o1200;
+dress o1200 as entity values (
+	name = 'Spaces Remote Control';
+	properties = [];
+);
+dress o1200 as resource values (
+);
+dress o1200 as document values (
+	id = 'spaces_document';
+	size = o1217;
+	content = 'none';
+);
+insert into collection Containers: [o1200];
+insert into association Contains: [(o1200, o1230)];
+insert into association ContainsPages: [(o1200, o1230)];
+insert into association CreatedBy: [(o1279, o1194), (o1292, o1194), (o1251, o1194), (o1207, o1194), (o1230, o1194), (o1200, o1194)];
+create o1217;
+dress o1217 as dimension values (
+	width = 216;
+	height = 279;
+);
+create o1274;
+dress o1274 as dimension values (
+	width = 216;
+	height = 179;
+);
+insert into collection Dimensions: [o1217, o1274];
+insert into collection Documents: [o1200];
+insert into collection Ellipses: [];
+create o1207;
+dress o1207 as entity values (
+	name = 'spaces_template';
+	properties = [];
+);
+dress o1207 as resource values (
+);
+dress o1207 as template values (
+);
+create o1292;
+dress o1292 as entity values (
+	name = 'Link for Page AC';
+	properties = [];
+);
+dress o1292 as link values (
+);
+create o1230;
+dress o1230 as entity values (
+	name = 'Spaces Page 1';
+	properties = [];
+);
+dress o1230 as resource values (
+);
+dress o1230 as page values (
+	number = 1;
+	size = o1217;
+);
+create o1251;
+dress o1251 as entity values (
+	name = 'Power';
+	properties = [];
+);
+dress o1251 as selector values (
+);
+dress o1251 as shape values (
+);
+dress o1251 as rectangle values (
+	upperLeft = o1270;
+	size = o1274;
+);
+insert into collection Entities: [o1207, o1292, o1279, o1230, o1251, o1200];
+insert into collection Groups: [];
+insert into association HasMembers: [];
+insert into association HasPreferences: [];
+insert into association HasShapes: [];
+insert into association HasSource: [(o1292, o1251)];
+insert into association HasTarget: [(o1292, o1279)];
+insert into association HasTemplate: [(o1200, o1207)];
+insert into collection Images: [];
+insert into association InaccessibleTo: [];
+create o1194;
+dress o1194 as User values (
+	name = 'Nadir Weibel';
+	description = 'Postdoctoral Researcher, UCSD';
+);
+dress o1194 as individual values (
+	login = 'weibel';
+	password = 'weibel';
+);
+insert into collection Individuals: [o1194];
+insert into collection Layers: [o1190];
+insert into collection Links: [o1292];
+insert into collection Media: [];
+insert into collection Movies: [];
+insert into association OnLayer: [(o1251, o1190)];
+insert into association OnPage: [(o1251, o1207)];
+insert into collection Pages: [o1230];
+insert into collection Parameters: [];
+create o1270;
+dress o1270 as point values (
+	x = 0;
+	y = 0;
+);
+insert into collection Points: [o1270];
+insert into collection Polygons: [];
+insert into collection Preferences: [];
+insert into collection Rectangles: [o1251];
+insert into association RefersTo: [(o1251, o1207)];
+insert into collection Resources: [o1207, o1279, o1230, o1200];
+insert into collection Selectors: [o1251];
+insert into collection Shapes: [o1251];
+insert into collection Templates: [o1207];
+insert into collection Texts: [];
+insert into collection Users: [o1194];
+insert into collection Webpages: [];

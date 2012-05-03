@@ -1,0 +1,938 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE iserver SYSTEM "./iserver.dtd">
+<iserver>
+	<layer id="defaultLayer">
+		<name>Default Layer</name>
+	</layer>
+	<individual id="nadir">
+		<name>Nadir Weibel</name>
+		<description>Postdoctoral Researcher, UCSD</description>
+		<login>weibel</login>
+		<password>weibel</password>
+	</individual>
+	<document id="spaces_document" creator="nadir"
+		templates="spaces_template">
+		<name>Spaces Remote Control</name>
+		<id>spaces_document</id>
+		<size>
+			<width>216</width>
+			<height>279</height>
+		</size>
+		<content>none</content>
+	</document>
+	<template id="spaces_template" creator="nadir">
+		<name>spaces_template</name>
+	</template>
+	<page id="spaces_page_1" creator="nadir" document="spaces_document">
+		<name>Spaces Page 1</name>
+		<number>1</number>
+	</page>
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="page_shape" layer="defaultLayer">
+		<name>Power</name>
+		<upperLeft>
+			<point>
+				<x>0</x>
+				<y>0</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>216</width>
+			<height>179</height>
+		</size>
+	</rectangle>
+	
+	<activeComponent id="page_ac" creator="nadir">
+		<name>Page AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>1</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+	<link id="page_link" creator="nadir" sources="page_shape"
+		targets="page_ac">
+		<name>Link for Page AC</name>
+	</link>
+
+<!-- 
+	<rectangle resource="spaces_template" creator="nadir"
+		id="power_button" layer="defaultLayer">
+		<name>Power</name>
+		<upperLeft>
+			<point>
+				<x>163</x>
+				<y>17</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>23</width>
+			<height>15</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_1_ac" creator="nadir">
+		<name>spaces Power AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>1</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_1_link" creator="nadir" sources="button_1"
+		targets="button_1_ac">
+		<name>Link for spaces Power</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_2" layer="defaultLayer">
+		<name>Button A</name>
+		<upperLeft>
+			<point>
+				<x>28</x>
+				<y>47</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>38</width>
+			<height>36</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_2_ac" creator="nadir">
+		<name>spaces Button A AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>2</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_2_link" creator="nadir" sources="button_2"
+		targets="button_2_ac">
+		<name>Link for spaces Button A</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_3" layer="defaultLayer">
+		<name>Button B</name>
+		<upperLeft>
+			<point>
+				<x>86</x>
+				<y>47</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>38</width>
+			<height>36</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_3_ac" creator="nadir">
+		<name>spaces Button B AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>3</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_3_link" creator="nadir" sources="button_3"
+		targets="button_3_ac">
+		<name>Link for spaces Button B</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_4" layer="defaultLayer">
+		<name>Button C</name>
+		<upperLeft>
+			<point>
+				<x>145</x>
+				<y>47</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>38</width>
+			<height>36</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_4_ac" creator="nadir">
+		<name>spaces Button C AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>4</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_4_link" creator="nadir" sources="button_4"
+		targets="button_4_ac">
+		<name>Link for spaces Button C</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_5" layer="defaultLayer">
+		<name>ENTER</name>
+		<upperLeft>
+			<point>
+				<x>69</x>
+				<y>99</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>76</width>
+			<height>14</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_5_ac" creator="nadir">
+		<name>spaces ENTER AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>5</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_5_link" creator="nadir" sources="button_5"
+		targets="button_5_ac">
+		<name>Link for spaces ENTER</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_6" layer="defaultLayer">
+		<name>Last</name>
+		<upperLeft>
+			<point>
+				<x>28</x>
+				<y>99</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>29</width>
+			<height>15</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_6_ac" creator="nadir">
+		<name>spaces Last AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>6</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_6_link" creator="nadir" sources="button_6"
+		targets="button_6_ac">
+		<name>Link for spaces Last</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_7" layer="defaultLayer">
+		<name>Next</name>
+		<upperLeft>
+			<point>
+				<x>157</x>
+				<y>99</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>29</width>
+			<height>15</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_7_ac" creator="nadir">
+		<name>spaces Next AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>7</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_7_link" creator="nadir" sources="button_7"
+		targets="button_7_ac">
+		<name>Link for spaces Next</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_8" layer="defaultLayer">
+		<name>NUM 1</name>
+		<upperLeft>
+			<point>
+				<x>69</x>
+				<y>121</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>25</width>
+			<height>26</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_8_ac" creator="nadir">
+		<name>spaces NUM 1 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>8</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_8_link" creator="nadir" sources="button_8"
+		targets="button_8_ac">
+		<name>Link for spaces NUM 1</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_9" layer="defaultLayer">
+		<name>NUM 2</name>
+		<upperLeft>
+			<point>
+				<x>94</x>
+				<y>121</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>25</width>
+			<height>26</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_9_ac" creator="nadir">
+		<name>spaces NUM 2 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>9</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_9_link" creator="nadir" sources="button_9"
+		targets="button_9_ac">
+		<name>Link for spaces NUM 2</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_10" layer="defaultLayer">
+		<name>NUM 3</name>
+		<upperLeft>
+			<point>
+				<x>119</x>
+				<y>121</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>25</width>
+			<height>26</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_10_ac" creator="nadir">
+		<name>spaces NUM 3 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>10</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_10_link" creator="nadir" sources="button_10"
+		targets="button_10_ac">
+		<name>Link for spaces NUM 3</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_11" layer="defaultLayer">
+		<name>NUM 4</name>
+		<upperLeft>
+			<point>
+				<x>69</x>
+				<y>146</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>25</width>
+			<height>26</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_11_ac" creator="nadir">
+		<name>spaces NUM 4 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>11</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_11_link" creator="nadir" sources="button_11"
+		targets="button_11_ac">
+		<name>Link for spaces NUM 4</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_12" layer="defaultLayer">
+		<name>NUM 5</name>
+		<upperLeft>
+			<point>
+				<x>94</x>
+				<y>146</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>25</width>
+			<height>26</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_12_ac" creator="nadir">
+		<name>spaces NUM 5 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>12</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_12_link" creator="nadir" sources="button_12"
+		targets="button_12_ac">
+		<name>Link for spaces NUM 5</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_13" layer="defaultLayer">
+		<name>NUM 6</name>
+		<upperLeft>
+			<point>
+				<x>119</x>
+				<y>146</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>25</width>
+			<height>26</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_13_ac" creator="nadir">
+		<name>spaces NUM 6 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>13</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_13_link" creator="nadir" sources="button_13"
+		targets="button_13_ac">
+		<name>Link for spaces NUM 6</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_14" layer="defaultLayer">
+		<name>NUM 7</name>
+		<upperLeft>
+			<point>
+				<x>69</x>
+				<y>172</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>25</width>
+			<height>26</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_14_ac" creator="nadir">
+		<name>spaces NUM 7 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>14</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_14_link" creator="nadir" sources="button_14"
+		targets="button_14_ac">
+		<name>Link for spaces NUM 7</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_15" layer="defaultLayer">
+		<name>NUM 8</name>
+		<upperLeft>
+			<point>
+				<x>94</x>
+				<y>172</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>25</width>
+			<height>26</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_15_ac" creator="nadir">
+		<name>spaces NUM 8 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>15</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_15_link" creator="nadir" sources="button_15"
+		targets="button_15_ac">
+		<name>Link for spaces NUM 8</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_16" layer="defaultLayer">
+		<name>NUM 9</name>
+		<upperLeft>
+			<point>
+				<x>119</x>
+				<y>172</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>25</width>
+			<height>26</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_16_ac" creator="nadir">
+		<name>spaces NUM 9 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>16</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_16_link" creator="nadir" sources="button_16"
+		targets="button_16_ac">
+		<name>Link for spaces NUM 9</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_17" layer="defaultLayer">
+		<name>NUM 0</name>
+		<upperLeft>
+			<point>
+				<x>94</x>
+				<y>197</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>25</width>
+			<height>26</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_17_ac" creator="nadir">
+		<name>spaces NUM 0 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>17</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_17_link" creator="nadir" sources="button_17"
+		targets="button_17_ac">
+		<name>Link for spaces NUM 0</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_18" layer="defaultLayer">
+		<name>Volume Up</name>
+		<upperLeft>
+			<point>
+				<x>28</x>
+				<y>172</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>28</width>
+			<height>13</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_18_ac" creator="nadir">
+		<name>spaces Volume Up AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>18</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_18_link" creator="nadir" sources="button_18"
+		targets="button_18_ac">
+		<name>Link for spaces Volume Up</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_19" layer="defaultLayer">
+		<name>Volumne Down</name>
+		<upperLeft>
+			<point>
+				<x>28</x>
+				<y>208</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>28</width>
+			<height>13</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_19_ac" creator="nadir">
+		<name>spaces Volumne Down AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>19</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_19_link" creator="nadir" sources="button_19"
+		targets="button_19_ac">
+		<name>Link for spaces Volumne Down</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_20" layer="defaultLayer">
+		<name>Channel Up</name>
+		<upperLeft>
+			<point>
+				<x>157</x>
+				<y>172</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>28</width>
+			<height>13</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_20_ac" creator="nadir">
+		<name>spaces Channel Up AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>20</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_20_link" creator="nadir" sources="button_20"
+		targets="button_20_ac">
+		<name>Link for spaces Channel Up</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_21" layer="defaultLayer">
+		<name>Channel Down</name>
+		<upperLeft>
+			<point>
+				<x>157</x>
+				<y>208</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>28</width>
+			<height>13</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_21_ac" creator="nadir">
+		<name>spaces Channel Down AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>21</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_21_link" creator="nadir" sources="button_21"
+		targets="button_21_ac">
+		<name>Link for spaces Channel Down</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_22" layer="defaultLayer">
+		<name>Function 1</name>
+		<upperLeft>
+			<point>
+				<x>28</x>
+				<y>242</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>29</width>
+			<height>20</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_22_ac" creator="nadir">
+		<name>spaces Function 1 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>22</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_22_link" creator="nadir" sources="button_22"
+		targets="button_22_ac">
+		<name>Link for spaces Function 1</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_23" layer="defaultLayer">
+		<name>Function 2</name>
+		<upperLeft>
+			<point>
+				<x>69</x>
+				<y>242</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>29</width>
+			<height>20</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_23_ac" creator="nadir">
+		<name>spaces Function 2 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>23</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_23_link" creator="nadir" sources="button_23"
+		targets="button_23_ac">
+		<name>Link for spaces Function 2</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_24" layer="defaultLayer">
+		<name>Function 3</name>
+		<upperLeft>
+			<point>
+				<x>115</x>
+				<y>242</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>29</width>
+			<height>20</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_24_ac" creator="nadir">
+		<name>spaces Function 3 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>24</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_24_link" creator="nadir" sources="button_24"
+		targets="button_24_ac">
+		<name>Link for spaces Function 3</name>
+	</link>
+	
+	
+
+	<rectangle resource="spaces_template" creator="nadir"
+		id="button_25" layer="defaultLayer">
+		<name>Function 4</name>
+		<upperLeft>
+			<point>
+				<x>156</x>
+				<y>242</y>
+			</point>
+		</upperLeft>
+		<size>
+			<width>29</width>
+			<height>20</height>
+		</size>
+	</rectangle>
+	
+
+	<activeComponent id="button_25_ac" creator="nadir">
+		<name>spaces Function 4 AC</name>
+		<properties>
+			<parameter>
+				<key>org.ximtec.iserver.ac:buttonNr</key>
+				<value>25</value>
+			</parameter>
+		</properties>
+		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+	</activeComponent>
+	
+
+	<link id="button_25_link" creator="nadir" sources="button_25"
+		targets="button_25_ac">
+		<name>Link for spaces Function 4</name>
+	</link>
+	
+-->	
+
+</iserver>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--iServer XML import/export format-->
+<!ELEMENT iserver (link* | individual* | group* | layer* | document* | page* | rectangle* | polygon* | circle* | ellipse* | complexShape* | textComp* | medium* | omswe* | activeComponent* | rfidSpace* | rfidTag* | parameter* | xhtmlDocument* | xhtmlSelector* | template* | flashMovie* | flashPropertySelector* | flashMethodSelector*)+>
+
+<!ELEMENT link ((name, creator?, authorised?, unauthorised?, properties?), (sources?, targets?))>
+<!ATTLIST link
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	templates IDREFS #IMPLIED
+	sources IDREFS #IMPLIED
+	targets IDREFS #IMPLIED
+>
+<!ELEMENT individual ((name, description, preferences?, members?), (login, password))>
+<!ATTLIST individual
+	id ID #IMPLIED
+	preferences IDREFS #IMPLIED
+>
+<!ELEMENT group (name, description, preferences?, members?)>
+<!ATTLIST group
+	id ID #IMPLIED
+	preferences IDREFS #IMPLIED
+	members IDREFS #IMPLIED
+>
+<!ELEMENT layer (name)>
+<!ATTLIST layer
+	id ID #IMPLIED
+>
+<!ELEMENT document ((name, creator?, authorised?, unauthorised?, properties?), (template*), (id, size?, content, pages?))>
+<!ATTLIST document
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	templates IDREFS #IMPLIED
+	size IDREF #IMPLIED
+	pages IDREFS #IMPLIED
+>
+<!ELEMENT page ((name, creator?, authorised?, unauthorised?, properties?), (template*), (size?, number, document?))>
+<!ATTLIST page
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	templates IDREFS #IMPLIED
+	document IDREF #REQUIRED
+	size IDREF #IMPLIED
+>
+<!ELEMENT rectangle ((name, creator?, authorised?, unauthorised?, properties?), (layer?)?, (upperLeft, size))>
+<!ATTLIST rectangle
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	layer IDREF #IMPLIED
+	resource IDREF #REQUIRED
+>
+<!ELEMENT polygon ((name, creator?, authorised?, unauthorised?, properties?), (layer?)?, (point+))>
+<!ATTLIST polygon
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	layer IDREF #IMPLIED
+	resource IDREF #REQUIRED
+>
+<!ELEMENT circle ((name, creator?, authorised?, unauthorised?, properties?), (layer?)?, (centre, radius))>
+<!ATTLIST circle
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	layer IDREF #IMPLIED
+	resource IDREF #REQUIRED
+>
+<!ELEMENT ellipse ((name, creator?, authorised?, unauthorised?, properties?), (layer?)?, (centre, width, height))>
+<!ATTLIST ellipse
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	layer IDREF #IMPLIED
+	resource IDREF #REQUIRED
+>
+<!ELEMENT complexShape ((name, creator?, authorised?, unauthorised?, properties?), (layer?)?, (shapes*))>
+<!ATTLIST complexShape
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	layer IDREF #IMPLIED
+	resource IDREF #REQUIRED
+	shapes IDREFS #IMPLIED
+>
+<!ELEMENT textComp ((name, creator?, authorised?, unauthorised?, properties?), (template*), (content))>
+<!ATTLIST textComp
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	templates IDREFS #IMPLIED
+>
+<!ELEMENT medium ((name, creator?, authorised?, unauthorised?, properties?), (template*), (description, content, collection?))>
+<!ATTLIST medium
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	templates IDREFS #IMPLIED
+>
+<!ELEMENT omswe ((name, creator?, authorised?, unauthorised?, properties?), (template*), (description, content, collection?))>
+<!ATTLIST omswe
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	templates IDREFS #IMPLIED
+>
+<!ELEMENT activeComponent ((name, creator?, authorised?, unauthorised?, properties?), (template*), (identifier, timeout?))>
+<!ATTLIST activeComponent
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	templates IDREFS #IMPLIED
+>
+<!ELEMENT rfidSpace ((name, creator?, authorised?, unauthorised?, properties?), (template*))>
+<!ATTLIST rfidSpace
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	templates IDREFS #IMPLIED
+>
+<!ELEMENT rfidTag ((name, creator?, authorised?, unauthorised?, properties?), (layer?)?, (id))>
+<!ATTLIST rfidTag
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	layer IDREF #IMPLIED
+	resource IDREF #REQUIRED
+>
+
+<!ELEMENT flashMovie ((name, creator?, authorised?, unauthorised?, properties?), (template*), (content))>
+<!ATTLIST flashMovie
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	templates IDREFS #IMPLIED
+>
+
+<!ELEMENT flashPropertySelector ((name, creator?, authorised?, unauthorised?, properties?), (layer?)?, (object), (propertyName, value, endValue))>
+<!ATTLIST flashPropertySelector
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	layer IDREF #IMPLIED
+	resource IDREF #REQUIRED
+>
+
+<!ELEMENT object (#PCDATA)>
+<!ELEMENT propertyName (#PCDATA)>
+<!ELEMENT endValue (#PCDATA)>
+
+<!ELEMENT flashMethodSelector ((name, creator?, authorised?, unauthorised?, properties?), (layer?)?, (object), (methodName, arguments))>
+<!ATTLIST flashMethodSelector
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	layer IDREF #IMPLIED
+	resource IDREF #REQUIRED
+>
+
+<!ELEMENT methodName (#PCDATA)>
+
+<!ELEMENT arguments (argument+)>
+<!ELEMENT argument (key, value)>
+
+<!ELEMENT selector (#PCDATA)>
+
+<!ELEMENT name (#PCDATA)>
+
+<!ELEMENT creator (individual)>
+<!ATTLIST creator
+	individual IDREF #IMPLIED
+>
+
+<!ELEMENT identifier (#PCDATA)>
+<!ELEMENT uri (#PCDATA)>
+<!ELEMENT timeout (#PCDATA)>
+<!ELEMENT data (#PCDATA)>
+
+<!ELEMENT authorised (individual* | group*)+>
+<!ATTLIST authorised
+	users IDREFS #IMPLIED
+>
+<!ELEMENT unauthorised (individual* | group*)*>
+<!ATTLIST unauthorised
+	users IDREFS #IMPLIED
+>
+<!ELEMENT properties (parameter+)>
+<!ELEMENT sources (rectangle*)>
+<!ELEMENT targets (rectangle*)+>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT preferences (parameter+)>
+<!ELEMENT members (individual*, group*)>
+<!ELEMENT login (#PCDATA)>
+<!ELEMENT password (#PCDATA)>
+
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT size (width, height)>
+<!ATTLIST size
+	id ID #IMPLIED
+>
+<!ELEMENT content (#PCDATA)>
+<!ELEMENT pages (page+)>
+
+<!ELEMENT number (#PCDATA)>
+
+<!ELEMENT upperLeft (point)>
+
+<!ELEMENT point (x, y)>
+
+<!ELEMENT centre (point)>
+<!ELEMENT radius (#PCDATA)>
+
+<!ELEMENT width (#PCDATA)>
+<!ELEMENT height (#PCDATA)>
+
+<!ELEMENT shapes (rectangle* | polygon* | circle* | ellipse* | complexShape*)>
+
+<!ELEMENT collection (#PCDATA)>
+
+<!ELEMENT parameter (key, value)>
+<!ATTLIST parameter
+	id ID #IMPLIED
+>
+
+<!ELEMENT template ((name, creator?, authorised?, unauthorised?, properties?), (template*))>
+<!ATTLIST template
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+>
+
+<!ELEMENT x (#PCDATA)>
+<!ELEMENT y (#PCDATA)>
+
+<!ELEMENT key (#PCDATA)>
+<!ELEMENT value (#PCDATA)>
+
+<!ELEMENT xhtmlDocument ((name, creator?, authorised?, unauthorised?, properties?), (uri))>
+<!ATTLIST xhtmlDocument
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+>
+
+<!ELEMENT xhtmlSelector ((name, creator?, authorised?, unauthorised?, properties?), (layer?)?, (xpointer))>
+<!ATTLIST xhtmlSelector
+	id ID #IMPLIED
+	creator IDREF #IMPLIED
+	properties IDREFS #IMPLIED
+	authorised IDREFS #IMPLIED
+	unauthorised IDREFS #IMPLIED
+	layer IDREF #IMPLIED
+	resource IDREF #REQUIRED
+>
+
+<!ELEMENT xpointer (#PCDATA)>
+
