@@ -6,14 +6,17 @@ using System.Net.Sockets;
 using InteractiveSpace;
 using Google.ProtocolBuffers;
 
-namespace AnnotoPenReceiver
+namespace AnnotoPen
 {
     class Program
     {
         static void Main(string[] args)
         {
-            TcpClient client = new TcpClient();
-            client.Connect("localhost", 65432);
+            AnnotoPenReceiver receiver = AnnotoPenReceiver.NewInstance("128.54.43.76", 65432);
+            
+
+            /*TcpClient client = new TcpClient();
+            client.Connect("128.54.5.95", 65432);
 
             NetworkStream stream = client.GetStream();
             CodedInputStream codedStream = CodedInputStream.CreateInstance(stream);
@@ -28,7 +31,7 @@ namespace AnnotoPenReceiver
                 codedStream.PopLimit(oldLimit);
 
                 Console.WriteLine(msg.ToString());
-            }
+            }*/
         }
     }
 } 

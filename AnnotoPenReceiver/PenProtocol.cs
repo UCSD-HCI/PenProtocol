@@ -35,19 +35,21 @@ namespace InteractiveSpace {
       byte[] descriptorData = global::System.Convert.FromBase64String(
           "ChFQZW5Qcm90b2NvbC5wcm90bxIQSW50ZXJhY3RpdmVTcGFjZSJOCg1TdGF0" + 
           "dXNNZXNzYWdlEiwKBnN0YXR1cxgBIAIoDjIcLkludGVyYWN0aXZlU3BhY2Uu" + 
-          "U3RhdHVzQ29kZRIPCgdtZXNzYWdlGAIgASgJIlMKDU1vdGlvbk1lc3NhZ2US" + 
-          "LAoGbW90aW9uGAEgAigOMhwuSW50ZXJhY3RpdmVTcGFjZS5Nb3Rpb25Db2Rl" + 
-          "EgkKAXgYAiABKAISCQoBeRgDIAEoAiLRAQoHTWVzc2FnZRIrCgR0eXBlGAEg" + 
-          "AigOMh0uSW50ZXJhY3RpdmVTcGFjZS5NZXNzYWdlVHlwZRIMCgR0aW1lGAIg" + 
-          "ASgNEhQKDGN1c3RvbVN0cmluZxgDIAEoCRITCgtjdXN0b21CeXRlcxgEIAEo" + 
-          "CRIvCgZzdGF0dXMYBSABKAsyHy5JbnRlcmFjdGl2ZVNwYWNlLlN0YXR1c01l" + 
-          "c3NhZ2USLwoGbW90aW9uGAYgASgLMh8uSW50ZXJhY3RpdmVTcGFjZS5Nb3Rp" + 
-          "b25NZXNzYWdlKkgKC01lc3NhZ2VUeXBlEhAKDEN1c3RvbVN0cmluZxAAEg8K" + 
-          "C0N1c3RvbUJ5dGVzEAESCgoGU3RhdHVzEAISCgoGTW90aW9uEAMqPwoKU3Rh" + 
-          "dHVzQ29kZRINCglDb25uZWN0ZWQQABIMCghTdGFydGluZxABEgkKBVJlYWR5" + 
-          "EAISCQoFRXJyb3IQAyoxCgpNb3Rpb25Db2RlEgsKB1BlbkRvd24QABIJCgVQ" + 
-          "ZW5VcBABEgsKB1Blbk1vdmUQAkJFCjBlZHUudWNzZC5oY2kuaW50ZXJhY3Rp" + 
-          "dmVzcGFjZS5hbm5vdG9wZW4ucHJvdG9idWZCEUFubm90b1BlblByb3RvY29s");
+          "U3RhdHVzQ29kZRIPCgdtZXNzYWdlGAIgASgJIpUBCg1Nb3Rpb25NZXNzYWdl" + 
+          "EiwKBm1vdGlvbhgBIAIoDjIcLkludGVyYWN0aXZlU3BhY2UuTW90aW9uQ29k" + 
+          "ZRIJCgF4GAIgASgCEgkKAXkYAyABKAISEQoJdGltZXN0YW1wGAQgASgNEg0K" + 
+          "BWZvcmNlGAUgASgNEhAKCGRvY3VtZW50GAYgASgJEgwKBHBhZ2UYByABKA0i" + 
+          "0QEKB01lc3NhZ2USKwoEdHlwZRgBIAIoDjIdLkludGVyYWN0aXZlU3BhY2Uu" + 
+          "TWVzc2FnZVR5cGUSDAoEdGltZRgCIAEoDRIUCgxjdXN0b21TdHJpbmcYAyAB" + 
+          "KAkSEwoLY3VzdG9tQnl0ZXMYBCABKAwSLwoGc3RhdHVzGAUgASgLMh8uSW50" + 
+          "ZXJhY3RpdmVTcGFjZS5TdGF0dXNNZXNzYWdlEi8KBm1vdGlvbhgGIAEoCzIf" + 
+          "LkludGVyYWN0aXZlU3BhY2UuTW90aW9uTWVzc2FnZSpICgtNZXNzYWdlVHlw" + 
+          "ZRIQCgxDdXN0b21TdHJpbmcQABIPCgtDdXN0b21CeXRlcxABEgoKBlN0YXR1" + 
+          "cxACEgoKBk1vdGlvbhADKj8KClN0YXR1c0NvZGUSDQoJQ29ubmVjdGVkEAAS" + 
+          "DAoIU3RhcnRpbmcQARIJCgVSZWFkeRACEgkKBUVycm9yEAMqMQoKTW90aW9u" + 
+          "Q29kZRILCgdQZW5Eb3duEAASCQoFUGVuVXAQARILCgdQZW5Nb3ZlEAJCRQow" + 
+          "ZWR1LnVjc2QuaGNpLmludGVyYWN0aXZlc3BhY2UuYW5ub3RvcGVuLnByb3Rv" + 
+          "YnVmQhFBbm5vdG9QZW5Qcm90b2NvbA==");
       pbd::FileDescriptor.InternalDescriptorAssigner assigner = delegate(pbd::FileDescriptor root) {
         descriptor = root;
         internal__static_InteractiveSpace_StatusMessage__Descriptor = Descriptor.MessageTypes[0];
@@ -57,7 +59,7 @@ namespace InteractiveSpace {
         internal__static_InteractiveSpace_MotionMessage__Descriptor = Descriptor.MessageTypes[1];
         internal__static_InteractiveSpace_MotionMessage__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::InteractiveSpace.MotionMessage, global::InteractiveSpace.MotionMessage.Builder>(internal__static_InteractiveSpace_MotionMessage__Descriptor,
-                new string[] { "Motion", "X", "Y", });
+                new string[] { "Motion", "X", "Y", "Timestamp", "Force", "Document", "Page", });
         internal__static_InteractiveSpace_Message__Descriptor = Descriptor.MessageTypes[2];
         internal__static_InteractiveSpace_Message__FieldAccessorTable = 
             new pb::FieldAccess.FieldAccessorTable<global::InteractiveSpace.Message, global::InteractiveSpace.Message.Builder>(internal__static_InteractiveSpace_Message__Descriptor,
@@ -434,8 +436,8 @@ namespace InteractiveSpace {
   public sealed partial class MotionMessage : pb::GeneratedMessage<MotionMessage, MotionMessage.Builder> {
     private MotionMessage() { }
     private static readonly MotionMessage defaultInstance = new MotionMessage().MakeReadOnly();
-    private static readonly string[] _motionMessageFieldNames = new string[] { "motion", "x", "y" };
-    private static readonly uint[] _motionMessageFieldTags = new uint[] { 8, 21, 29 };
+    private static readonly string[] _motionMessageFieldNames = new string[] { "document", "force", "motion", "page", "timestamp", "x", "y" };
+    private static readonly uint[] _motionMessageFieldTags = new uint[] { 50, 40, 8, 56, 32, 21, 29 };
     public static MotionMessage DefaultInstance {
       get { return defaultInstance; }
     }
@@ -486,6 +488,49 @@ namespace InteractiveSpace {
       get { return y_; }
     }
     
+    public const int TimestampFieldNumber = 4;
+    private bool hasTimestamp;
+    private uint timestamp_;
+    public bool HasTimestamp {
+      get { return hasTimestamp; }
+    }
+    [global::System.CLSCompliant(false)]
+    public uint Timestamp {
+      get { return timestamp_; }
+    }
+    
+    public const int ForceFieldNumber = 5;
+    private bool hasForce;
+    private uint force_;
+    public bool HasForce {
+      get { return hasForce; }
+    }
+    [global::System.CLSCompliant(false)]
+    public uint Force {
+      get { return force_; }
+    }
+    
+    public const int DocumentFieldNumber = 6;
+    private bool hasDocument;
+    private string document_ = "";
+    public bool HasDocument {
+      get { return hasDocument; }
+    }
+    public string Document {
+      get { return document_; }
+    }
+    
+    public const int PageFieldNumber = 7;
+    private bool hasPage;
+    private uint page_;
+    public bool HasPage {
+      get { return hasPage; }
+    }
+    [global::System.CLSCompliant(false)]
+    public uint Page {
+      get { return page_; }
+    }
+    
     public override bool IsInitialized {
       get {
         if (!hasMotion) return false;
@@ -497,13 +542,25 @@ namespace InteractiveSpace {
       int size = SerializedSize;
       string[] field_names = _motionMessageFieldNames;
       if (hasMotion) {
-        output.WriteEnum(1, field_names[0], (int) Motion, Motion);
+        output.WriteEnum(1, field_names[2], (int) Motion, Motion);
       }
       if (hasX) {
-        output.WriteFloat(2, field_names[1], X);
+        output.WriteFloat(2, field_names[5], X);
       }
       if (hasY) {
-        output.WriteFloat(3, field_names[2], Y);
+        output.WriteFloat(3, field_names[6], Y);
+      }
+      if (hasTimestamp) {
+        output.WriteUInt32(4, field_names[4], Timestamp);
+      }
+      if (hasForce) {
+        output.WriteUInt32(5, field_names[1], Force);
+      }
+      if (hasDocument) {
+        output.WriteString(6, field_names[0], Document);
+      }
+      if (hasPage) {
+        output.WriteUInt32(7, field_names[3], Page);
       }
       UnknownFields.WriteTo(output);
     }
@@ -523,6 +580,18 @@ namespace InteractiveSpace {
         }
         if (hasY) {
           size += pb::CodedOutputStream.ComputeFloatSize(3, Y);
+        }
+        if (hasTimestamp) {
+          size += pb::CodedOutputStream.ComputeUInt32Size(4, Timestamp);
+        }
+        if (hasForce) {
+          size += pb::CodedOutputStream.ComputeUInt32Size(5, Force);
+        }
+        if (hasDocument) {
+          size += pb::CodedOutputStream.ComputeStringSize(6, Document);
+        }
+        if (hasPage) {
+          size += pb::CodedOutputStream.ComputeUInt32Size(7, Page);
         }
         size += UnknownFields.SerializedSize;
         memoizedSerializedSize = size;
@@ -659,6 +728,18 @@ namespace InteractiveSpace {
         if (other.HasY) {
           Y = other.Y;
         }
+        if (other.HasTimestamp) {
+          Timestamp = other.Timestamp;
+        }
+        if (other.HasForce) {
+          Force = other.Force;
+        }
+        if (other.HasDocument) {
+          Document = other.Document;
+        }
+        if (other.HasPage) {
+          Page = other.Page;
+        }
         this.MergeUnknownFields(other.UnknownFields);
         return this;
       }
@@ -720,6 +801,22 @@ namespace InteractiveSpace {
             }
             case 29: {
               result.hasY = input.ReadFloat(ref result.y_);
+              break;
+            }
+            case 32: {
+              result.hasTimestamp = input.ReadUInt32(ref result.timestamp_);
+              break;
+            }
+            case 40: {
+              result.hasForce = input.ReadUInt32(ref result.force_);
+              break;
+            }
+            case 50: {
+              result.hasDocument = input.ReadString(ref result.document_);
+              break;
+            }
+            case 56: {
+              result.hasPage = input.ReadUInt32(ref result.page_);
               break;
             }
           }
@@ -791,6 +888,93 @@ namespace InteractiveSpace {
         result.y_ = 0F;
         return this;
       }
+      
+      public bool HasTimestamp {
+        get { return result.hasTimestamp; }
+      }
+      [global::System.CLSCompliant(false)]
+      public uint Timestamp {
+        get { return result.Timestamp; }
+        set { SetTimestamp(value); }
+      }
+      [global::System.CLSCompliant(false)]
+      public Builder SetTimestamp(uint value) {
+        PrepareBuilder();
+        result.hasTimestamp = true;
+        result.timestamp_ = value;
+        return this;
+      }
+      public Builder ClearTimestamp() {
+        PrepareBuilder();
+        result.hasTimestamp = false;
+        result.timestamp_ = 0;
+        return this;
+      }
+      
+      public bool HasForce {
+        get { return result.hasForce; }
+      }
+      [global::System.CLSCompliant(false)]
+      public uint Force {
+        get { return result.Force; }
+        set { SetForce(value); }
+      }
+      [global::System.CLSCompliant(false)]
+      public Builder SetForce(uint value) {
+        PrepareBuilder();
+        result.hasForce = true;
+        result.force_ = value;
+        return this;
+      }
+      public Builder ClearForce() {
+        PrepareBuilder();
+        result.hasForce = false;
+        result.force_ = 0;
+        return this;
+      }
+      
+      public bool HasDocument {
+        get { return result.hasDocument; }
+      }
+      public string Document {
+        get { return result.Document; }
+        set { SetDocument(value); }
+      }
+      public Builder SetDocument(string value) {
+        pb::ThrowHelper.ThrowIfNull(value, "value");
+        PrepareBuilder();
+        result.hasDocument = true;
+        result.document_ = value;
+        return this;
+      }
+      public Builder ClearDocument() {
+        PrepareBuilder();
+        result.hasDocument = false;
+        result.document_ = "";
+        return this;
+      }
+      
+      public bool HasPage {
+        get { return result.hasPage; }
+      }
+      [global::System.CLSCompliant(false)]
+      public uint Page {
+        get { return result.Page; }
+        set { SetPage(value); }
+      }
+      [global::System.CLSCompliant(false)]
+      public Builder SetPage(uint value) {
+        PrepareBuilder();
+        result.hasPage = true;
+        result.page_ = value;
+        return this;
+      }
+      public Builder ClearPage() {
+        PrepareBuilder();
+        result.hasPage = false;
+        result.page_ = 0;
+        return this;
+      }
     }
     static MotionMessage() {
       object.ReferenceEquals(global::InteractiveSpace.PenProtocol.Descriptor, null);
@@ -858,11 +1042,11 @@ namespace InteractiveSpace {
     
     public const int CustomBytesFieldNumber = 4;
     private bool hasCustomBytes;
-    private string customBytes_ = "";
+    private pb::ByteString customBytes_ = pb::ByteString.Empty;
     public bool HasCustomBytes {
       get { return hasCustomBytes; }
     }
-    public string CustomBytes {
+    public pb::ByteString CustomBytes {
       get { return customBytes_; }
     }
     
@@ -912,7 +1096,7 @@ namespace InteractiveSpace {
         output.WriteString(3, field_names[1], CustomString);
       }
       if (hasCustomBytes) {
-        output.WriteString(4, field_names[0], CustomBytes);
+        output.WriteBytes(4, field_names[0], CustomBytes);
       }
       if (hasStatus) {
         output.WriteMessage(5, field_names[3], Status);
@@ -940,7 +1124,7 @@ namespace InteractiveSpace {
           size += pb::CodedOutputStream.ComputeStringSize(3, CustomString);
         }
         if (hasCustomBytes) {
-          size += pb::CodedOutputStream.ComputeStringSize(4, CustomBytes);
+          size += pb::CodedOutputStream.ComputeBytesSize(4, CustomBytes);
         }
         if (hasStatus) {
           size += pb::CodedOutputStream.ComputeMessageSize(5, Status);
@@ -1156,7 +1340,7 @@ namespace InteractiveSpace {
               break;
             }
             case 34: {
-              result.hasCustomBytes = input.ReadString(ref result.customBytes_);
+              result.hasCustomBytes = input.ReadBytes(ref result.customBytes_);
               break;
             }
             case 42: {
@@ -1253,11 +1437,11 @@ namespace InteractiveSpace {
       public bool HasCustomBytes {
         get { return result.hasCustomBytes; }
       }
-      public string CustomBytes {
+      public pb::ByteString CustomBytes {
         get { return result.CustomBytes; }
         set { SetCustomBytes(value); }
       }
-      public Builder SetCustomBytes(string value) {
+      public Builder SetCustomBytes(pb::ByteString value) {
         pb::ThrowHelper.ThrowIfNull(value, "value");
         PrepareBuilder();
         result.hasCustomBytes = true;
@@ -1267,7 +1451,7 @@ namespace InteractiveSpace {
       public Builder ClearCustomBytes() {
         PrepareBuilder();
         result.hasCustomBytes = false;
-        result.customBytes_ = "";
+        result.customBytes_ = pb::ByteString.Empty;
         return this;
       }
       
