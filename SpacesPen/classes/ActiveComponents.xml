@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<activeComponents xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="activeComponents.xsd">
+	
+ <!-- Empty -->
+ 	<activeComponent>
+ 		<identifier>edu.ucsd.hci.spaces.BUTTON</identifier>
+ 		<logic>edu.ucsd.hci.spaces.pen.activecomponent.logic.EmptyLogic</logic>
+ 		<stub>edu.ucsd.hci.spaces.pen.activecomponent.stub.SpacesBasicStub</stub>
+	</activeComponent>	
+</activeComponents>
