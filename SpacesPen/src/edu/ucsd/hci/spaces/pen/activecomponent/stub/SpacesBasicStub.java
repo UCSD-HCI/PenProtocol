@@ -106,6 +106,9 @@ public class SpacesBasicStub extends DefaultStub implements Observer{
 	@Override
 	public synchronized void processEvent(ActiveComponentEvent event) {
 
+		if (SpacesPenClient.isPenUp())
+			return;
+		
 		DetailedLocation location = (DetailedLocation) ((IPaperEvent) event)
 				.getLocation();
 		this.currentReader = ((IPaperEvent) event).getInputDevice();
