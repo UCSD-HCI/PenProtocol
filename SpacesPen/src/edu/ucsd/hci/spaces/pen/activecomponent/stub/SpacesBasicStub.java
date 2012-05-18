@@ -128,7 +128,7 @@ public class SpacesBasicStub extends DefaultStub implements Observer{
 			} else {
 				//Sampled at ~100Hz.  A sample every ~10ms.67
 				//LOGGER.info("Basic Stub");
-				LOGGER.info("X=" + location.getPosition().getX() + ", Y="
+				LOGGER.info("PenDown " + "X=" + location.getPosition().getX() + ", Y="
 						+ location.getPosition().getY() + ", T="
 						+ location.getTimestamp() + ", F="
 						+ location.getForce());
@@ -170,10 +170,13 @@ public class SpacesBasicStub extends DefaultStub implements Observer{
 		if(obj instanceof PenUpMessage)
 		{
 			PenUpMessage penUp = (PenUpMessage)obj;
-			LOGGER.info("PenUp");
+			LOGGER.info("PenUp " + "X=" + -1.0 + ", Y="
+					+ -1.0 + ", T="
+					+ this.currentTime + ", F="
+					+ 0);
 			SpacesPenClient.server.issueMotion(MotionCode.PenUp, 
 					(float)-1.0, (float)-1.0,
-					0, 0,
+					(int)this.currentTime, 0,
 					this.document, this.page);
 		}
 	}
