@@ -41,7 +41,7 @@ dress o1217 as dimension values (
 create o1274;
 dress o1274 as dimension values (
 	width = 216;
-	height = 179;
+	height = 279;
 );
 insert into collection Dimensions: [o1217, o1274];
 insert into collection Documents: [o1200];

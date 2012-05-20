@@ -128,24 +128,25 @@ public class SpacesBasicStub extends DefaultStub implements Observer{
 			} else {
 				//Sampled at ~100Hz.  A sample every ~10ms.67
 				//LOGGER.info("Basic Stub");
-				LOGGER.info("PenDown " + "X=" + location.getPosition().getX() + ", Y="
-						+ location.getPosition().getY() + ", T="
-						+ location.getTimestamp() + ", F="
-						+ location.getForce());
-				
-				LOGGER.info("Document=" + this.document + ", Page=" + this.page);
-				
-				SpacesPenClient.server.issueMotion(MotionCode.PenDown, 
-						(float)location.getPosition().getX(), (float)location.getPosition().getY(),
-						(int)location.getTimestamp(), location.getForce(),
-						this.document, this.page);
 
 				Note note = BufferedInputDeviceTool.getNote(this.currentReader,
-						this.startTime, location.getTimestamp() - 1, 35);
-				note.interpolate();
+						this.startTime, location.getTimestamp(), 35);
+				note.interpolate();				
 				
-				if(note.getBounds2D().getWidth() > 10 || note.getBounds2D().getHeight() > 10)
+				if(note.getBounds2D().getWidth() > 0 || note.getBounds2D().getHeight() > 0)
+				{
 					NoteTool.exportJPEG(note, "/tmp/notes/note.jpg");
+					LOGGER.info("Pen Down X=" + note.getEndPoint().getX() + ", Y=" 
+							+ note.getEndPoint().getY() + ", T="
+							+ location.getTimestamp() + ", F="
+							+ location.getForce());
+					LOGGER.info("Document=" + this.document + ", Page=" + this.page);
+					
+					SpacesPenClient.server.issueMotion(MotionCode.PenDown, 
+							(float)note.getEndPoint().getX(), (float)note.getEndPoint().getY(),
+							(int)location.getTimestamp(), location.getForce(),
+							this.document, this.page);
+				}
 
 			}
 		} else {
